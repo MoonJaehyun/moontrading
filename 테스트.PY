@@ -34,6 +34,7 @@ def get_news(url: str, keyword: str):
 
 if __name__ == '__main__':
     try:
+        start_time = time.time()  # 시작 시간 기록
         print()
 
         # 코스피 종목 코드
@@ -98,6 +99,9 @@ if __name__ == '__main__':
 
             time.sleep(1)
             print(i)
+        end_time = time.time()  # 종료 시간 기록
+        elapsed_time = end_time - start_time  # 총 걸린 시간 계산
+        print("총 걸린 시간:", elapsed_time, "초")
 
         filename = datetime.now().strftime("%Y-%m-%d")
         document.save(filename + '.docx')
